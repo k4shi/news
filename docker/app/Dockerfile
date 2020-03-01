@@ -1,10 +1,8 @@
 FROM python:3.6
 
 ENV PYTHONUNBUFFERED 1
-ENV DJANGO_CONFIGURATION Dev
-ENV DJANGO_SETTINGS_MODULE backend.settings
 
-WORKDIR /opt/backend
+WORKDIR /opt/news
 
 COPY ./requirements .
 
