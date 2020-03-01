@@ -11,7 +11,16 @@ services:
       - POSTGRES_PASSWORD=passwd
     volumes:
       - ./postgres:/var/lib/postgresql/data
-
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "localhost"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+      - ./rabbitmq-isolated.conf:/etc/rabbitmq/rabbitmq.config
   app:
     build:
       context: .
@@ -20,7 +29,7 @@ services:
       - "127.0.0.1:8000:8000"
     links:
       - postgres
+      - rabbitmq
     image: news_api
     volumes:
       - ./../news/:/opt/news
-    restart: always

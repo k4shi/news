@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='News',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_created=True)),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('title', models.CharField(max_length=75)),
                 ('content', models.CharField(max_length=500)),
             ],
