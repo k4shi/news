@@ -92,3 +92,7 @@ class AppsMixin(object):
     USE_L10N = True
 
     USE_TZ = True
+
+    RABBITMQ_HOST = StringValue()
+    RABBITMQ_PORT = StringValue()
+    RABBITMQ_TOPIC = StringValue()
