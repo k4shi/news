@@ -22,15 +22,13 @@ class AppsMixin(object):
 
         'rest_framework',
 
-        'backend.news'
+        # 'backend',
+        'backend.news',
     ]
 
     REST_FRAMEWORK = {
         'DEFAULT_PERMISSION_CLASSES': [
             'rest_framework.permissions.IsAuthenticated',
-        ],
-        'DEFAULT_AUTHENTICATION_CLASSES': [
-            'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
         ],
         'DEFAULT_PAGINATION_CLASS': 'backend.common.rest.pagination.Pagination',
         'PAGE_SIZE': 1000000,

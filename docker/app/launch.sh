@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt/backend
+cd /opt/news
 
 if [ ! -f "$ENV_FILE" ]; then
    cp example.env .env
@@ -13,4 +13,4 @@ echo "Collect static files"
 yes yes | python3 manage.py collectstatic
 
 echo "Starting server"
-uwsgi --ini /opt/backend/configs/uwsgi.docker.ini
+uwsgi --ini /opt/news/configs/uwsgi.docker.ini
